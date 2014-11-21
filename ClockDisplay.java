@@ -45,11 +45,14 @@
         }
         
 
-        public void setTime(int newHoras, int newMinutos)
+        public void setTime(int horas2, int minutos2, int dia2, int mes2, int ano2)
         {
-            horas.setValue(newHoras);
-            minutos.setValue(newMinutos);
-            updateDisplay();
+           horas.setValue(horas2);
+           minutos.setValue(minutos2);
+           dia.setValue(dia2);
+           mes.setValue(mes2);
+           ano.setValue(ano2);        
+           updateDisplay();
         }
         
 
@@ -88,6 +91,9 @@
         {
             int actualHour = horas.getValue();
             String displayedHour = "";
+            String displayedDay = "";
+            String displayedMonth = "";
+            String displayedYear = "";
             String amPm = "";   
             boolean isMorning = true;
             
@@ -129,8 +135,9 @@
                 amPm = "pm";
             }
             
+        
             
-            horaDisplay = displayedHour + ":" + minutos.getDisplayValue() + amPm + " " + dia.getDisplayValue() + "/" + 
+            horaDisplay = displayedHour + ":" + minutos.getDisplayValue() + amPm + " " + dia.getValue() + "/" + 
             mes.getDisplayValue() + "/" + ano.getDisplayValue();
         }
 }
